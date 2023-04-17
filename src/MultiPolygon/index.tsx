@@ -13,6 +13,7 @@ export function builtStyle(opt: { [key: string]: TMap.PolygonStyleOptions }) {
 export function buildGeometries<T>(
   geometries: TMap.PolygonGeometry<T>[],
 ): TMap.PolygonGeometry<T>[] {
+  return geometries;
   return geometries.map(v => {
     return {
       ...v,

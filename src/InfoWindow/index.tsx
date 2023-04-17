@@ -11,7 +11,7 @@ type InfoWindowOptions = {
   content: string;
   position: TMap.LatLngData;
   visible?: boolean;
-  offset?: object;
+  offset?: { x: any; y: any };
   zIndex?: number;
   enableCustom?: boolean;
   [key: string]: any;
