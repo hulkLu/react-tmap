@@ -10,7 +10,6 @@
   "bugs": {
     "url": "https://github.com/hulkLu/react-tmap/issues"
   },
-  "homepage": "https://didi.github.io/react-tmap/",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "keywords": [
