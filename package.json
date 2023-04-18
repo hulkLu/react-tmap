@@ -5,10 +5,10 @@
   "description": "基于腾讯地图JavaScript API GL、TypeScript 封装适用于 react 的高性能地图组件库",
   "repository": {
     "type": "git",
-    "url": "https://github.com/didi/react-tmap.git"
+    "url": "https://github.com/hulkLu/react-tmap.git"
   },
   "bugs": {
-    "url": "https://github.com/didi/react-tmap/issues"
+    "url": "https://github.com/hulkLu/react-tmap/issues"
   },
   "homepage": "https://didi.github.io/react-tmap/",
   "main": "dist/index.js",
