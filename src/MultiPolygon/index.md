@@ -24,14 +24,17 @@ const styles = {
   },
 };
 
-console.log(
-  'window.Tmap',
-  new window.TMap.LatLng(23.7528878404531, 109.22046387081),
-);
+// console.log(
+//   'window.Tmap',
+//   new window.TMap.LatLng(23.7528878404531, 109.22046387081),
+// );
 const path = [
   //多边形轮廓点串（LatLng数组）
   [
     [
+      // new window.TMap.LatLng(23.7528878404531, 109.22046387081),
+      // new window.TMap.LatLng(23.7527798580694, 109.22340253847733),
+      // new window.TMap.LatLng(23.750541662115342, 109.22341326338437),
       { lat: 23.7528878404531, lng: 109.22046387081 },
       { lat: 23.7527798580694, lng: 109.22340253847733 },
       { lat: 23.750541662115342, lng: 109.22341326338437 },
