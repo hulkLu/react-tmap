@@ -24,12 +24,19 @@ const styles = {
   },
 };
 
+console.log(
+  'window.Tmap',
+  new window.TMap.LatLng(23.7528878404531, 109.22046387081),
+);
 const path = [
   //多边形轮廓点串（LatLng数组）
-  { lat: 40.041054, lng: 116.272303 },
-  { lat: 40.039419, lng: 116.272721 },
-  { lat: 40.039764, lng: 116.274824 },
-  { lat: 40.041374, lng: 116.274491 },
+  [
+    [
+      { lat: 23.7528878404531, lng: 109.22046387081 },
+      { lat: 23.7527798580694, lng: 109.22340253847733 },
+      { lat: 23.750541662115342, lng: 109.22341326338437 },
+    ],
+  ],
 ];
 
 const geometries = [
@@ -64,7 +71,7 @@ export default () => {
       <TMap
         mapKey="TOZBZ-OU2CX-JJP4Z-7FCBV-CDDJ2-AHFQZ"
         zoom={16}
-        center={{ lat: 40.038515, lng: 116.272185 }}
+        center={{ lat: 23.7528878404531, lng: 109.22046387081 }}
       >
         <MultiPolygon
           styles={getStyles()}

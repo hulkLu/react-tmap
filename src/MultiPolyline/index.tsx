@@ -13,6 +13,7 @@ function builtStyle(opt: { [key: string]: TMap.PolylineStyleOptions }) {
 function buildGeometries<T>(
   geometries: TMap.PolylineGeometry<T>[],
 ): TMap.PolylineGeometry<T>[] {
+  return geometries;
   return geometries.map(v => {
     return {
       ...v,
