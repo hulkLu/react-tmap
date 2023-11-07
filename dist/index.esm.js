@@ -6,77 +6,68 @@ import React, {
   useContext,
 } from 'react';
 
-function _iterableToArrayLimit(arr, i) {
-  var _i =
-    null == arr
+function _iterableToArrayLimit(r, l) {
+  var t =
+    null == r
       ? null
-      : ('undefined' != typeof Symbol && arr[Symbol.iterator]) ||
-        arr['@@iterator'];
-  if (null != _i) {
-    var _s,
-      _e,
-      _x,
-      _r,
-      _arr = [],
-      _n = !0,
-      _d = !1;
+      : ('undefined' != typeof Symbol && r[Symbol.iterator]) || r['@@iterator'];
+  if (null != t) {
+    var e,
+      n,
+      i,
+      u,
+      a = [],
+      f = !0,
+      o = !1;
     try {
-      if (((_x = (_i = _i.call(arr)).next), 0 === i)) {
-        if (Object(_i) !== _i) return;
-        _n = !1;
+      if (((i = (t = t.call(r)).next), 0 === l)) {
+        if (Object(t) !== t) return;
+        f = !1;
       } else
         for (
           ;
-          !(_n = (_s = _x.call(_i)).done) &&
-          (_arr.push(_s.value), _arr.length !== i);
-          _n = !0
+          !(f = (e = i.call(t)).done) && (a.push(e.value), a.length !== l);
+          f = !0
         );
-    } catch (err) {
-      (_d = !0), (_e = err);
+    } catch (r) {
+      (o = !0), (n = r);
     } finally {
       try {
-        if (!_n && null != _i.return && ((_r = _i.return()), Object(_r) !== _r))
+        if (!f && null != t.return && ((u = t.return()), Object(u) !== u))
           return;
       } finally {
-        if (_d) throw _e;
+        if (o) throw n;
       }
     }
-    return _arr;
+    return a;
   }
 }
-function ownKeys(object, enumerableOnly) {
-  var keys = Object.keys(object);
+function ownKeys(e, r) {
+  var t = Object.keys(e);
   if (Object.getOwnPropertySymbols) {
-    var symbols = Object.getOwnPropertySymbols(object);
-    enumerableOnly &&
-      (symbols = symbols.filter(function(sym) {
-        return Object.getOwnPropertyDescriptor(object, sym).enumerable;
+    var o = Object.getOwnPropertySymbols(e);
+    r &&
+      (o = o.filter(function(r) {
+        return Object.getOwnPropertyDescriptor(e, r).enumerable;
       })),
-      keys.push.apply(keys, symbols);
+      t.push.apply(t, o);
   }
-  return keys;
+  return t;
 }
-function _objectSpread2(target) {
-  for (var i = 1; i < arguments.length; i++) {
-    var source = null != arguments[i] ? arguments[i] : {};
-    i % 2
-      ? ownKeys(Object(source), !0).forEach(function(key) {
-          _defineProperty(target, key, source[key]);
+function _objectSpread2(e) {
+  for (var r = 1; r < arguments.length; r++) {
+    var t = null != arguments[r] ? arguments[r] : {};
+    r % 2
+      ? ownKeys(Object(t), !0).forEach(function(r) {
+          _defineProperty(e, r, t[r]);
         })
       : Object.getOwnPropertyDescriptors
-      ? Object.defineProperties(
-          target,
-          Object.getOwnPropertyDescriptors(source),
-        )
-      : ownKeys(Object(source)).forEach(function(key) {
-          Object.defineProperty(
-            target,
-            key,
-            Object.getOwnPropertyDescriptor(source, key),
-          );
+      ? Object.defineProperties(e, Object.getOwnPropertyDescriptors(t))
+      : ownKeys(Object(t)).forEach(function(r) {
+          Object.defineProperty(e, r, Object.getOwnPropertyDescriptor(t, r));
         });
   }
-  return target;
+  return e;
 }
 function _classCallCheck(instance, Constructor) {
   if (!(instance instanceof Constructor)) {
@@ -1041,7 +1032,6 @@ function builtStyle$3(opt) {
   return styled;
 }
 function buildGeometries(geometries) {
-  console.log('geometries', geometries);
   return geometries;
 }
 var MultiPolygonComponent = function MultiPolygonComponent(_ref) {
@@ -1061,7 +1051,13 @@ var MultiPolygonComponent = function MultiPolygonComponent(_ref) {
       polygonRef.current = new TMap.MultiPolygon({
         id: id,
         map: map,
-        styles: builtStyle$3(styles || {}),
+        styles: (styles === null || styles === void 0
+        ? void 0
+        : styles.builtStyle)
+          ? styles === null || styles === void 0
+            ? void 0
+            : styles.builtStyle
+          : builtStyle$3(styles || {}),
         geometries: buildGeometries(geometries || []),
       });
       setOverlayIns(polygonRef.current);
@@ -1099,7 +1095,15 @@ var MultiPolygonComponent = function MultiPolygonComponent(_ref) {
         : (_polygonRef$current2 = polygonRef.current) === null ||
           _polygonRef$current2 === void 0
         ? void 0
-        : _polygonRef$current2.setStyles(builtStyle$3(styles || {}));
+        : _polygonRef$current2.setStyles(
+            (styles === null || styles === void 0
+            ? void 0
+            : styles.builtStyle)
+              ? styles === null || styles === void 0
+                ? void 0
+                : styles.builtStyle
+              : builtStyle$3(styles || {}),
+          );
     },
     [styles],
   );

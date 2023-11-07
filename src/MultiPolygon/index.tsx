@@ -13,7 +13,6 @@ export function builtStyle(opt: { [key: string]: TMap.PolygonStyleOptions }) {
 export function buildGeometries<T>(
   geometries: TMap.PolygonGeometry<T>[],
 ): TMap.PolygonGeometry<T>[] {
-
   return geometries;
   return geometries.map(v => {
     return {
@@ -51,8 +50,8 @@ const MultiPolygonComponent: FC<MultiPolygonOptions> = ({
       polygonRef.current = new TMap.MultiPolygon({
         id: id,
         map: map,
-        styles: styles.builtStyle
-          ? styles.builtStyle
+        styles: styles?.builtStyle
+          ? (styles?.builtStyle as any)
           : builtStyle(styles || {}),
         geometries: buildGeometries(geometries || []),
       });
@@ -76,9 +75,11 @@ const MultiPolygonComponent: FC<MultiPolygonOptions> = ({
   }, [geometries]);
 
   useEffect(() => {
-    polygonRef?.current?.setStyles(styles.builtStyle
-      ? styles.builtStyle
-      : builtStyle(styles || {}));
+    polygonRef?.current?.setStyles(
+      styles?.builtStyle
+        ? (styles?.builtStyle as any)
+        : builtStyle(styles || {}),
+    );
   }, [styles]);
 
   return null;
