@@ -52,7 +52,9 @@ const MultiPolygonComponent: FC<MultiPolygonOptions> = ({
       polygonRef.current = new TMap.MultiPolygon({
         id: id,
         map: map,
-        styles: builtStyle(styles || {}),
+        styles: styles.builtStyle
+          ? styles.builtStyle
+          : builtStyle(styles || {}),
         geometries: buildGeometries(geometries || []),
       });
       setOverlayIns(polygonRef.current);
