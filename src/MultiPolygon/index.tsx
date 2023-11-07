@@ -77,7 +77,9 @@ const MultiPolygonComponent: FC<MultiPolygonOptions> = ({
   }, [geometries]);
 
   useEffect(() => {
-    polygonRef?.current?.setStyles(builtStyle(styles || {}));
+    polygonRef?.current?.setStyles(styles.builtStyle
+      ? styles.builtStyle
+      : builtStyle(styles || {}));
   }, [styles]);
 
   return null;
